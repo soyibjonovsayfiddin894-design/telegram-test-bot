@@ -34,3 +34,4 @@ class Database:
         all_questions = self.cur.fetchall()
         selected = random.sample(all_questions, min(len(all_questions), count))
         return [{"question": q[0], "a": q[1], "b": q[2], "c": q[3], "d": q[4], "correct": q[5]} for q in selected]
+
