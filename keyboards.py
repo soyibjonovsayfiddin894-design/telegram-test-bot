@@ -1,15 +1,15 @@
-from telegram import InlineKeyboardMarkup, InlineKeyboardButton
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
-def join_channel_kb():
-    return InlineKeyboardMarkup([
-        [InlineKeyboardButton("📢 Kanalga o‘tish", url="https://t.me/YOUR_CHANNEL")],
-        [InlineKeyboardButton("✅ Tekshirish", callback_data="check_sub")]
-    ])
+def main_keyboard():
+    keyboard = [
+        [InlineKeyboardButton("Part 1", callback_data="part1")],
+        [InlineKeyboardButton("Part 2", callback_data="part2")]
+    ]
+    return InlineKeyboardMarkup(keyboard)
 
-def main_menu():
-    return InlineKeyboardMarkup([
-        [InlineKeyboardButton("📝 Test yaratish", callback_data="create_test")],
-        [InlineKeyboardButton("▶️ Test ishlash", callback_data="take_test")],
-        [InlineKeyboardButton("🏆 TOP 10", callback_data="top")],
-        [InlineKeyboardButton("👑 Eng faol yaratuvchilar", callback_data="top_creators")]
-    ])
+def yes_no_keyboard():
+    keyboard = [
+        [InlineKeyboardButton("Ha", callback_data="yes")],
+        [InlineKeyboardButton("Yoq", callback_data="no")]
+    ]
+    return InlineKeyboardMarkup(keyboard)
